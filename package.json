@@ -1,0 +1,42 @@
+{
+  "name": "minecraft-server-hub",
+  "version": "0.1.0",
+  "description": "Beginner-friendly desktop hub for creating, hosting, and monitoring Minecraft servers on local hardware.",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "preview": "npx serve src/renderer",
+    "test": "node tests/profile.test.js",
+    "build": "electron-builder",
+    "dist": "electron-builder --win portable"
+  },
+  "keywords": [
+    "minecraft",
+    "server",
+    "desktop",
+    "electron",
+    "upnp"
+  ],
+  "author": "YourName",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^26.15.2"
+  },
+  "build": {
+    "appId": "com.minehub.serverhub",
+    "productName": "Minecraft Server Hub",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "portable",
+      "icon": "assets/icon.ico"
+    }
+  }
+}
